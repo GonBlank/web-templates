@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+/*
+.inter-tight-<uniquifier> {
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+*/
+
+* {
+    margin: 0;
+    font-family: "Inter Tight", sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--background-grey);
+}
+
+nav {
+    padding: 10px 20px;
+    /*top-bottom rigth-left*/
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1rem;
+}
+
+
+nav .tittle {
+    color: var(--text-1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+nav .options {
+    margin-left: auto;
+    font-weight: 500;
+    width: 35%;
+    display: flex;
+    gap: 25px;
+    justify-content: flex-end;
+    font-weight: 400;
+}
+
+nav .options a:hover {
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-thickness: 2px;
+    transition: 2s;
+}
+
+nav .options a {
+    color: var(--text-1);
+}
+
+main {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+main .presentation {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+main .presentation h1 {
+    color: var(--text-1);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    /*mínimo , preferido, máximo */
+    /*
+    font-size: 3rem;*/
+}
+
+main .presentation p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: var(--text-2);
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.main-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+
+}
+
+.main-buttons button {
+    height: 40px;
+    width: auto;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    padding: 8px 16px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.main-buttons button:hover {
+    transform: scale(1.05);
+}
+
+.main-buttons .primary {
+    color: var(--background-white);
+    background-color: var(--primary);
+}
+
+.main-buttons .primary:hover {
+    background-color: #2f2f36;
+}
+
+.main-buttons .secondary {
+    background-color: var(--background-white);
+    border: 1px solid rgb(211, 211, 211);
+}
+
+.main-buttons .secondary:hover {
+    background-color: #ebebeb;
+}
+
+main .image {
+    display: flex;
+
+}
+
+main .image img {
+    max-width: 600px;
+    max-height: 600px;
+    width: 100%;
+    box-shadow: 0px 5px 14px 0px #d4d4d4;
+    border-radius: 10px;
+}
+
+section.menu{
+    padding-top: 110px;
+    background-color: var(--background-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+section.menu .tittle{
+    text-align: center;
+}
+
+section.menu .tittle h1 {
+    color: var(--text-1);
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    /*mínimo , preferido, máximo */
+
+}
+
+section.menu .tittle p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: var(--text-2);
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.grid-menu{
+    padding: 25px 20px;
+    /*top-bottom rigth-left*/
+    max-width: 1450px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    
+    justify-items: center;
+    gap: 25px;
+}
+
+@media (min-width: 900px) {
+    .grid-menu {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+
+.card{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e2e2;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.card h1{
+    color: var(--text-1);
+    /*font-size: clamp(2rem, 2.5vw, 3rem);*/
+}
+
+.card img{
+    align-self: center;
+    max-height: 250px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.card p{
+    color: var(--text-2);
+    font-size: 1rem;
+}
