@@ -18,6 +18,7 @@
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 body {
@@ -66,7 +67,9 @@ nav .options a {
     color: var(--text-1);
 }
 
-main {
+.home,
+.visit-us,
+.contact-us {
     margin-top: 100px;
     margin-bottom: 100px;
     display: flex;
@@ -79,7 +82,8 @@ main {
     padding: 20px;
 }
 
-main .presentation {
+
+.presentation {
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -87,13 +91,13 @@ main .presentation {
 
 }
 
-main .presentation h1 {
+.presentation h1 {
     color: var(--text-1);
     font-size: clamp(2rem, 3.5vw, 3rem);
     /*min , pref, max */
 }
 
-main .presentation p {
+.presentation p {
     padding-top: 10px;
     padding-bottom: 10px;
     color: var(--text-2);
@@ -108,7 +112,7 @@ main .presentation p {
 
 }
 
-.main-buttons button {
+.main-buttons a {
     height: 40px;
     width: auto;
     font-size: 14px;
@@ -120,10 +124,11 @@ main .presentation p {
     gap: 8px;
     align-items: center;
     cursor: pointer;
-    transition: .2s;
+    transition: .2s;    outline: none; /* Remove default focus border */
+    -webkit-tap-highlight-color: transparent; /* Remove the blue box on mobiles */
 }
 
-.main-buttons button:hover {
+.main-buttons a:hover {
     transform: scale(1.05);
 }
 
@@ -136,13 +141,25 @@ main .presentation p {
     background-color: #2f2f36;
 }
 
+.main-buttons .primary:active {
+    background-color: #2f2f36af;
+    transform: scale(1);
+    transition: .1s;
+}
+
 .main-buttons .secondary {
     background-color: var(--background-white);
-    border: 1px solid rgb(211, 211, 211);
+    border: 1px solid #d3d3d3;
 }
 
 .main-buttons .secondary:hover {
     background-color: #ebebeb;
+}
+
+.main-buttons .secondary:active{
+    background-color: var(--background-white);
+    transform: scale(1);
+    transition: .1s;
 }
 
 main .image {
@@ -150,7 +167,7 @@ main .image {
 
 }
 
-main .image img {
+.canon-image img {
     max-width: 600px;
     max-height: 600px;
     width: 100%;
@@ -158,8 +175,10 @@ main .image img {
     border-radius: 10px;
 }
 
-section.menu {
+.menu,
+.gallery {
     padding-top: 110px;
+    padding-bottom: 50px;
     background-color: var(--background-white);
     display: flex;
     flex-direction: column;
@@ -167,18 +186,24 @@ section.menu {
 }
 
 
-section.menu .tittle {
+.menu .tittle,
+.gallery .tittle {
     text-align: center;
+    
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-section.menu .tittle h1 {
+.menu .tittle h1,
+.gallery .tittle h1 {
     color: var(--text-1);
     font-size: clamp(2rem, 2.5vw, 3rem);
     /*min , pref, max */
 
 }
 
-section.menu .tittle p {
+.menu .tittle p,
+.gallery .tittle p {
     padding-top: 10px;
     padding-bottom: 10px;
     color: var(--text-2);
@@ -186,9 +211,42 @@ section.menu .tittle p {
     font-weight: 300;
 }
 
-.grid-menu {
-    padding: 25px 20px;
-    /*top-bottom rigth-left*/
+.menu a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-top: 60px;
+    gap: 10px;
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+    outline: none; /* Remove default focus border */
+    -webkit-tap-highlight-color: transparent; /* Remove the blue box on mobiles */
+}
+
+.menu a:hover {
+    background-color: #e7e5e5a1;
+    transition: .2s;
+}
+
+.menu a:active {
+    transform: scale(0.99);
+    background-color: #d3d3d3;
+    transition: .1s;
+}
+
+.menu a:hover svg.img-menu {
+    animation: shake .9s ease normal forwards;
+}
+
+.menu a svg {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.grid-area {
+    padding: 25px;
     max-width: 1450px;
     width: 100%;
     height: 100%;
@@ -201,11 +259,9 @@ section.menu .tittle p {
 
 
 
-
-
-
 .card {
     width: 100%;
+    max-width: 425px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -246,7 +302,7 @@ section.menu .tittle p {
 
 
 
-section.visit-us {
+.visit-us {
     margin-top: 100px;
     margin-bottom: 100px;
     display: flex;
@@ -260,32 +316,8 @@ section.visit-us {
     padding: 20px;
 }
 
-.visit-us .presentation {
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
-
-.visit-us .presentation h1 {
-    color: var(--text-1);
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    /*min , pref, max */
-}
-
-.visit-us .presentation p {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: var(--text-2);
-    font-size: 1.4rem;
-    font-weight: 300;
-}
-
-
 .visit-us .map {
     display: flex;
-
 }
 
 .visit-us .map img {
@@ -320,24 +352,84 @@ section.visit-us {
     font-size: 1.1rem;
 }
 
+.gallery .grid-area {
+    gap: 2px;
+}
+
+.gallery .grid-area .card img {
+    align-self: center;
+    max-height: 250px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.contact {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 25px;
+}
 
 
 
 
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+
+    10% {
+        transform: rotate(8deg);
+    }
+
+    20%,
+    40%,
+    60% {
+        transform: rotate(-10deg);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: rotate(10deg);
+    }
+
+    80% {
+        transform: rotate(-8deg);
+    }
+
+    90% {
+        transform: rotate(8deg);
+    }
+}
 
 @media (width >=900px) {
-    .grid-menu {
+    .grid-area {
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     }
 
 }
 
 @media (width <=900px) {
-    main {
-        flex-wrap: wrap;
+
+    nav .options {
+        display: none;
     }
 
-    section.visit-us {
+    nav {
+        justify-content: center;
+    }
+
+    .home,
+    .contact-us,
+    .visit-us {
         flex-wrap: wrap;
     }
 
