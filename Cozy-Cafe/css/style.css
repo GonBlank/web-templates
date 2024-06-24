@@ -16,6 +16,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -124,8 +128,11 @@ nav .options a {
     gap: 8px;
     align-items: center;
     cursor: pointer;
-    transition: .2s;    outline: none; /* Remove default focus border */
-    -webkit-tap-highlight-color: transparent; /* Remove the blue box on mobiles */
+    transition: transform .2s ease;
+    outline: none;
+    /* Remove default focus border */
+    -webkit-tap-highlight-color: transparent;
+    /* Remove the blue box on mobiles */
 }
 
 .main-buttons a:hover {
@@ -156,7 +163,7 @@ nav .options a {
     background-color: #ebebeb;
 }
 
-.main-buttons .secondary:active{
+.main-buttons .secondary:active {
     background-color: var(--background-white);
     transform: scale(1);
     transition: .1s;
@@ -189,7 +196,7 @@ main .image {
 .menu .tittle,
 .gallery .tittle {
     text-align: center;
-    
+
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -211,39 +218,6 @@ main .image {
     font-weight: 300;
 }
 
-.menu a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    margin-top: 60px;
-    gap: 10px;
-    border: 1px solid #d4d4d4;
-    border-radius: 10px;
-    outline: none; /* Remove default focus border */
-    -webkit-tap-highlight-color: transparent; /* Remove the blue box on mobiles */
-}
-
-.menu a:hover {
-    background-color: #e7e5e5a1;
-    transition: .2s;
-}
-
-.menu a:active {
-    transform: scale(0.99);
-    background-color: #d3d3d3;
-    transition: .1s;
-}
-
-.menu a:hover svg.img-menu {
-    animation: shake .9s ease normal forwards;
-}
-
-.menu a svg {
-    max-width: 80px;
-    max-height: 80px;
-}
 
 .grid-area {
     padding: 25px;
@@ -268,8 +242,8 @@ main .image {
     /* border: 1px solid #e2e2e2;*/
     padding: 0px 25px;
     /*top-bottom rigth-left*/
-    border-radius: 10px;
-    box-sizing: border-box;
+    justify-content: space-around;
+    transition: transform s ease;
 }
 
 .card h1 {
@@ -293,9 +267,19 @@ main .image {
     border-radius: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
+    object-fit: fill;
+    transition: transform .2s ease;
+}
+
+.card img:hover {
+    transform: scale(1.03);
+
 }
 
 .card p {
+    display: flex;
+    align-items: center;
+    min-height: 3rem;
     color: var(--text-2);
     font-size: 1rem;
 }
@@ -375,40 +359,57 @@ main .image {
 }
 
 
-
-
-@keyframes shake {
-
-    0%,
-    100% {
-        transform: rotate(0deg);
-        transform-origin: 50% 50%;
-    }
-
-    10% {
-        transform: rotate(8deg);
-    }
-
-    20%,
-    40%,
-    60% {
-        transform: rotate(-10deg);
-    }
-
-    30%,
-    50%,
-    70% {
-        transform: rotate(10deg);
-    }
-
-    80% {
-        transform: rotate(-8deg);
-    }
-
-    90% {
-        transform: rotate(8deg);
-    }
+.container-overlay{
+    margin: 25px;
+    position: relative;
+    width: 100%;
+    max-width: 425px;
+    display: flex;
+    flex-direction: column;
 }
+
+.overlay-image {
+    display: block;
+    transition: opacity .2s ease; /* Transition for opacity */
+    border-radius: 15px;
+    
+}
+
+.overlay {
+    border-radius: 0px 0 15px 15px ;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Transition for opacity */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 20px;
+    backdrop-filter: blur(3px);
+}
+
+
+.container-overlay:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.overlay-text h1, .overlay-text p{
+    padding-top: 2px;
+    color: whitesmoke;
+}
+
+
 
 @media (width >=900px) {
     .grid-area {
