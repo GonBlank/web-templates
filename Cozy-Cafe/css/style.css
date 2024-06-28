@@ -445,6 +445,12 @@ footer{
     padding: 10px;
 }
 
+footer .social-networks{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
 
 @media (width <=1000px) {
 
