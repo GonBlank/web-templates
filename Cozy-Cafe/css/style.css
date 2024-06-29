@@ -299,7 +299,7 @@ main .image {
 
 .visit-us .map {
     display: flex;
-    width: auto;
+    width: fit-content;
     justify-content:center;
 }
 
@@ -478,6 +478,10 @@ footer .social-networks{
     .full-width-article{
         grid-column: 1 / 1;
         grid-row: none;
+    }
+
+    .visit-us .map {
+        width: 100%;
     }
 
 }
