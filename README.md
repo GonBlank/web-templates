@@ -2,4 +2,4 @@
 Repository of free web templates designed by GonBlank
 
 Cozy-Cafe
-https://elipticnet.com/Cozy-Cafe/index.html
+https://elipticnet.com/web-templates/Cozy-Cafe/index.html
