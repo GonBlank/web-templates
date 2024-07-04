@@ -1,0 +1,65 @@
+:root {
+    --text-50: #f0f3f4;
+    --text-100: #e1e6ea;
+    --text-200: #c3cdd5;
+    --text-300: #a5b4c0;
+    --text-400: #889baa;
+    --text-500: #6a8295;
+    --text-600: #556877;
+    --text-700: #3f4e5a;
+    --text-800: #2a343c;
+    --text-900: #151a1e;
+    --text-950: #0b0d0f;
+    
+    --background-50: #eff2f6;
+    --background-100: #dfe5ec;
+    --background-200: #bfcbd9;
+    --background-300: #9fb1c6;
+    --background-400: #7e96b4;
+    --background-500: #5e7ca1;
+    --background-600: #4b6381;
+    --background-700: #394b60;
+    --background-800: #263240;
+    --background-900: #131920;
+    --background-950: #090c10;
+    
+    --primary-50: #eef3f7;
+    --primary-100: #dde6ee;
+    --primary-200: #bacdde;
+    --primary-300: #98b4cd;
+    --primary-400: #759bbd;
+    --primary-500: #5382ac;
+    --primary-600: #42688a;
+    --primary-700: #324e67;
+    --primary-800: #213445;
+    --primary-900: #111a22;
+    --primary-950: #080d11;
+    
+    --secondary-50: #ecf3f8;
+    --secondary-100: #dae7f1;
+    --secondary-200: #b5cee3;
+    --secondary-300: #8fb6d6;
+    --secondary-400: #6a9ec8;
+    --secondary-500: #4585ba;
+    --secondary-600: #376b95;
+    --secondary-700: #295070;
+    --secondary-800: #1c354a;
+    --secondary-900: #0e1b25;
+    --secondary-950: #070d13;
+    
+    --accent-50: #ebf3f9;
+    --accent-100: #d7e7f4;
+    --accent-200: #b0cfe8;
+    --accent-300: #88b7dd;
+    --accent-400: #619fd1;
+    --accent-500: #3987c6;
+    --accent-600: #2e6c9e;
+    --accent-700: #225177;
+    --accent-800: #17364f;
+    --accent-900: #0b1b28;
+    --accent-950: #060d14;
+}
+
+/*
+https://www.realtimecolors.com/?colors=e7ebee-0d1116-a9c1d6-2b5373-5597ce&fonts=Inter-Inter
+*/
